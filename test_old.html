@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS Device Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function isIOS() {
+      return (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream);
+    }
+
+    function checkDevice() {
+      const result = isIOS() ? "This is an iOS device." : "This is NOT an iOS device.";
+      document.getElementById('result').textContent = result;
+    }
+  </script>
+</head>
+<body>
+
+  <h1>iOS Device Detection</h1>
+  <p>Click the button to check if the device is running iOS.</p>
+  
+  <button onclick="checkDevice()">Check Device</button>
+  
+  <p id="result"></p>
+
+</body>
+</html>
